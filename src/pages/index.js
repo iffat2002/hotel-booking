@@ -1,11 +1,26 @@
 import Head from "next/head";
 import Image from "next/image";
+import { Navbar } from "@/components/Navbar";
+import { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
+import Link from "@mui/material/Link";
+import Box from "@mui/material/Box";
 import styles from "@/styles/Home.module.css";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+import MenuList from "@mui/material/MenuList";
+import MenuItem from "@mui/material/MenuItem";
+import Stack from "@mui/material/Stack";
+import useTheme from "@mui/styles/useTheme";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+ 
+  const theme = useTheme();
   return (
     <>
       <Head>
@@ -14,8 +29,21 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
-        <h1>hello world</h1>
+      <main>
+        <div>
+        <div className={styles.herobackground}>
+          
+          <Navbar />
+          <Header />
+         <Hero />
+         </div>
+          <Box>
+            <h1>helldfl</h1>
+            <Button variant="text">Text</Button>
+            <Button variant="contained">Contained</Button>
+            <Button variant="outlined">Outlined</Button>
+          </Box>
+        </div>
       </main>
     </>
   );
