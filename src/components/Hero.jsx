@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Typography, AppBar, Tabs, Tab } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
-import  Hotels  from "./subComponent/Hotels";
+import Hotels from "./subComponent/Hotels";
 import styles from "@/styles/Home.module.css";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
@@ -17,11 +17,7 @@ function TabPanel(props) {
       aria-labelledby={`full-width-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }
@@ -102,27 +98,153 @@ const Hero = () => {
             Support in approx 30s
           </Typography>
         </Box>
-        <Box sx={{ width: "100%", margin: "auto" }}>
-          <AppBar position="static" sx={{ borderRadius: "30px", background: "rgba(15, 41, 77, .8)", backdropFilter: "blur(6px)", width: "60%", margin: "auto" }}>
+        <Box sx={{ width: "100%", margin: "auto", marginTop: "12px" }}>
+          <AppBar
+            position="static"
+            sx={{
+              borderRadius: "30px",
+              background: "rgba(15, 41, 77, .8)",
+              backdropFilter: "blur(6px)",
+              width: "70%",
+              margin: "auto",
+             
+            }}
+          >
             <Tabs
               value={value}
               onChange={handleChange}
               textColor="inherit"
-              variant="fullWidth"
+            
               aria-label="full width tabs example"
               sx={{
                 padding: "5px",
+
+                justifyContent:"space-between",
+                 maxHeight:"38px",
+
                 "& .css-1aquho2-MuiTabs-indicator": {
-                  display: 'none',
+                  display: "none",
                 },
+                "& .css-1vw5i9y-MuiButtonBase-root-MuiTab-root": {
+                  padding: "0px",
+                },  
+                "& .MuiTabs-flexContainer":{
+                  height:"30px",
+                  justifyContent:"space-between",
+                }
               }}
             >
-              <Tab label="Item One" {...a11yProps(0)} sx={{ ...(value === 0 && { backgroundColor: 'background.paper', color: '#0f294d', borderRadius: "30px" }), }} />
-              <Tab label="Item Two" {...a11yProps(1)} sx={{ ...(value === 1 && { backgroundColor: 'background.paper', color: '#0f294d', borderRadius: "30px" }), }} />
-              <Tab label="Item Three" {...a11yProps(2)} sx={{ ...(value === 2 && { backgroundColor: 'background.paper', color: '#0f294d', borderRadius: "30px" }), }} />
+              <Tab
+               
+                label="Hotels"
+                {...a11yProps(0)}
+                sx={{
+                  fontWeight: "700",
+                  minHeight: '38px',
+                  textTransform: "none",
+                  fontSize: "large",
+                  ...(value === 0 && {
+                    backgroundColor: "background.paper",
+                    color: "#0f294d",
+                    borderRadius: "30px",
+                   
+                    padding: "0px",
+                  
+                   
+                   
+                  }),
+                }}
+              />
+              <Tab
+                label="Flights"
+                {...a11yProps(1)}
+                sx={{
+                  fontWeight: "700",
+                  minHeight: '38px',
+                  textTransform: "none",
+                  fontSize: "large",
+                  ...(value === 1 && {
+                    backgroundColor: "background.paper",
+                    color: "#0f294d",
+                    borderRadius: "30px",
+                   
+                  }),
+                }}
+              />
+              <Tab
+                label="Trains"
+                {...a11yProps(2)}
+                sx={{
+                  fontWeight: "700",
+                  minHeight: '38px',
+                  textTransform: "none",
+                  fontSize: "large",
+                  ...(value === 2 && {
+                    backgroundColor: "background.paper",
+                    color: "#0f294d",
+                    borderRadius: "30px",
+                  
+                  }),
+                }}
+              />
+              <Tab
+                label="Cars"
+                {...a11yProps(3)}
+                sx={{
+                  fontWeight: "700",
+                  minHeight: '38px',
+                  textTransform: "none",
+                  fontSize: "large",
+                  ...(value === 3 && {
+                    backgroundColor: "background.paper",
+                    color: "#0f294d",
+                    borderRadius: "30px",
+                  
+                  }),
+                }}
+              />
+              <Tab
+                label="Attractions & Tours"
+                {...a11yProps(4)}
+                sx={{
+                  fontWeight: "700",
+                  minHeight: '38px',
+                  textTransform: "none",
+                  fontSize: "large",
+                  ...(value === 4 && {
+                    backgroundColor: "background.paper",
+                    color: "#0f294d",
+                    borderRadius: "30px",
+           
+                  }),
+                }}
+              />
+              <Tab
+                label="Flight + Hotel"
+                {...a11yProps(5)}
+                sx={{
+                  fontWeight: "700",
+                  minHeight: '38px',
+                  textTransform: "none",
+                  fontSize: "large",
+                  ...(value === 5 && {
+                    backgroundColor: "background.paper",
+                    color: "#0f294d",
+                    borderRadius: "30px",
+                 
+                  }),
+                }}
+              />
             </Tabs>
           </AppBar>
-          <Box sx={{ bgcolor: "background.paper", marginTop: "-20px", width: "100%", borderRadius: "10px" }}>
+          <Box
+            sx={{
+              bgcolor: "background.paper",
+              marginTop: "-20px",
+              width: "100%",
+              borderRadius: "10px",
+            }}
+          >
             <SwipeableViews
               axis={theme.direction === "rtl" ? "x-reverse" : "x"}
               index={value}
