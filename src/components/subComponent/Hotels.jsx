@@ -250,7 +250,7 @@ const Hotels = () => {
         <Box
           mt={2}
           sx={{
-            width: "max-content",
+            width: "365px",
             border: "1px solid lightgray",
             borderRadius: "4px",
           }}

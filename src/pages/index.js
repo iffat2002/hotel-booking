@@ -15,11 +15,12 @@ import Stack from "@mui/material/Stack";
 import useTheme from "@mui/styles/useTheme";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ThreeImages from "@/components/ThreeImages";
+import WelcomePack from "@/components/WelcomePack";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
- 
   const theme = useTheme();
   return (
     <>
@@ -31,12 +32,15 @@ export default function Home() {
       </Head>
       <main>
         <div>
-        <div className={styles.herobackground}>
-          
-          <Navbar />
-          <Header />
-         <Hero />
-         </div>
+          <div className={styles.herobackground}>
+            <Navbar />
+            <Header />
+            <Hero />
+            <ThreeImages />
+          </div>
+      <div>
+      <WelcomePack />
+      </div>
           <Box>
             <h1>helldfl</h1>
             <Button variant="text">Text</Button>
