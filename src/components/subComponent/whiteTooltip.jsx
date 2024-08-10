@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { Tooltip, styled } from '@mui/material';
 
 const CustomTooltip = styled(({ className, ...props }) => (
-  <Tooltip {...props} classes={{ popper: className }} />
+  <Tooltip {...props} classes={{ popper: className }} placement="top" arrow />
 ))({
   [`& .MuiTooltip-tooltip`]: {
     backgroundColor: 'white',
@@ -13,9 +12,18 @@ const CustomTooltip = styled(({ className, ...props }) => (
     whiteSpace: "nowrap",
     maxWidth: "max-content",
     padding: "16px",
+    marginTop: "4px", 
   },
   [`& .MuiTooltip-arrow`]: {
     color: 'white',
+    border:"none",
+    width: '24px',
+    height: '12px',
+  
+
+    '&:before': {
+      border: 'none',
+    },
   },
 });
 

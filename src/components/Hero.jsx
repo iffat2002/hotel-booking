@@ -5,7 +5,7 @@ import Hotels from "./subComponent/Hotels";
 import styles from "@/styles/Home.module.css";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
-
+import WhiteTooltip from "./subComponent/whiteTooltip";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -62,6 +62,7 @@ const Hero = () => {
           Your Trip Starts Here
         </Typography>
         <Box display="flex" justifyContent="center" alignItems="center" mt={2}>
+        <WhiteTooltip title="This is secure payment information">
           <Typography
             variant="h7"
             sx={{
@@ -75,6 +76,7 @@ const Hero = () => {
           >
             Secure Payment
           </Typography>
+          </WhiteTooltip>
           <Box
             component="span"
             sx={{
@@ -84,6 +86,7 @@ const Hero = () => {
               mx: 1,
             }}
           />
+          <WhiteTooltip title="We usually answer phone calls within 30s">
           <Typography
             variant="h7"
             sx={{
@@ -97,6 +100,7 @@ const Hero = () => {
           >
             Support in approx 30s
           </Typography>
+          </WhiteTooltip>
         </Box>
         <Box sx={{ width: "100%", margin: "auto", marginTop: "12px" }}>
           <AppBar

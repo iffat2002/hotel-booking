@@ -17,6 +17,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ThreeImages from "@/components/ThreeImages";
 import WelcomePack from "@/components/WelcomePack";
+import Featured from "@/components/Featured";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,7 @@ export default function Home() {
           </div>
       <div>
       <WelcomePack />
+      <Featured />
       </div>
           <Box>
             <h1>helldfl</h1>
