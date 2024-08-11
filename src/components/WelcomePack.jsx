@@ -21,8 +21,9 @@ const cardData = [
     id: 1,
     title: "Sukhumvit Park, Bangkok - Marriott Executive Apartments",
     rating: 4.5,
-    imageUrl:"https://www.hotelscombined.co.uk/himg/6c/0d/c7/leonardo-2091356-HISHA_6076473916_O-459641.jpg",
-   
+    imageUrl:
+      "https://www.hotelscombined.co.uk/himg/6c/0d/c7/leonardo-2091356-HISHA_6076473916_O-459641.jpg",
+
     reviews: 250,
     price: "US$156",
   },
@@ -76,7 +77,7 @@ const cardData = [
 const WelcomePack = () => {
   const theme = useTheme();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerPage = 3; 
+  const itemsPerPage = 3;
 
   const handleNext = () => {
     if (currentIndex < cardData.length - itemsPerPage) {
@@ -90,10 +91,8 @@ const WelcomePack = () => {
     }
   };
 
-
   return (
     <Box
-   
       sx={{
         width: "90%",
         margin: "30px auto",
@@ -122,22 +121,37 @@ const WelcomePack = () => {
         </Grid>
         <Grid item xs={9} sx={{ position: "relative" }}>
           <Grid container spacing={2} sx={{ paddingTop: "4px" }}>
-          {cardData.slice(currentIndex, currentIndex + itemsPerPage).map((card) => (
+            {cardData
+              .slice(currentIndex, currentIndex + itemsPerPage)
+              .map((card) => (
                 <Grid item xs={12} sm={6} md={4} key={card.id}>
                   <Card
                     sx={{
                       borderRadius: "8px",
                       height: "100%",
                       paddingTop: "0px",
-                   
                     }}
                   >
-                    <CardMedia
-                      component="img"
-                       height="183"
-                      image={card.imageUrl}
-                      alt={card.title}
-                    />
+                    <Box
+                      sx={{
+                        overflow: "hidden", // Ensure the image doesn’t overflow out of the card
+                        "&:hover img": {
+                          transform: "scale(1.1)", // Scale the image on hover
+                        },
+                      }}
+                    >
+                      <CardMedia
+                        component="img"
+                        sx={{
+                          transition: "transform 0.3s ease-in-out", // Smooth transition
+                          width: "100%",
+                          height: "183",
+                        }}
+                        height="183"
+                        image={card.imageUrl}
+                        alt={card.title}
+                      />
+                    </Box>
                     <CardContent>
                       <Typography
                         variant="h7"
@@ -174,7 +188,9 @@ const WelcomePack = () => {
                             /5
                           </span>{" "}
                         </Typography>
-                        <Link href="/">{card.reviews} reviews</Link>
+                        <Link href="/" sx={{ color: "darkblue" }}>
+                          {card.reviews} reviews
+                        </Link>
                       </Stack>
                       <Typography
                         variant="h6"
