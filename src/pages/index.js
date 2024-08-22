@@ -19,6 +19,7 @@ import ThreeImages from "@/components/ThreeImages";
 import WelcomePack from "@/components/WelcomePack";
 import Featured from "@/components/Featured";
 import QRcode from "@/components/QRcode";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -44,6 +45,7 @@ export default function Home() {
       <WelcomePack />
       <Featured />
       <QRcode />
+      <Footer />
       </div>
           <Box>
             <h1>helldfl</h1>
