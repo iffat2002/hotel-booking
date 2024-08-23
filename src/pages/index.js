@@ -47,12 +47,7 @@ export default function Home() {
       <QRcode />
       <Footer />
       </div>
-          <Box>
-            <h1>helldfl</h1>
-            <Button variant="text">Text</Button>
-            <Button variant="contained">Contained</Button>
-            <Button variant="outlined">Outlined</Button>
-          </Box>
+          
         </div>
       </main>
     </>

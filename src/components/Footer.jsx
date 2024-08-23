@@ -1,40 +1,55 @@
-import React,{useState} from 'react'
-import { Link, Box, Stack, Typography, Divider,Tabs, Grid, Paper, 
-  Tab,
-  Button, List, ListItem, ListItemText
-   } from "@mui/material";
-   import PropTypes from "prop-types";
-   import { useTheme } from "@mui/material/styles";
+import React, { useState } from "react";
+import FacebookIcon from "@mui/icons-material/Facebook";
 
-   function CustomTabPanel(props) {
-    const { children, value, index, ...other } = props;
-  
-    return (
-      <div
-        role="tabpanel"
-        hidden={value !== index}
-        id={`simple-tabpanel-${index}`}
-        aria-labelledby={`simple-tab-${index}`}
-        {...other}
-      >
-        {value === index && <Box sx={{ pt: 1 }}>{children}</Box>}
-      </div>
-    );
-  }
-  
-  CustomTabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.number.isRequired,
-    value: PropTypes.number.isRequired,
+import XIcon from "@mui/icons-material/X";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import {
+  Link,
+  Container,
+  Box,
+  Stack,
+  Typography,
+  Divider,
+  Tabs,
+  Grid,
+  Paper,
+  Tab,
+  Button,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
+import PropTypes from "prop-types";
+import { useTheme } from "@mui/material/styles";
+
+function CustomTabPanel(props) {
+  const { children, value, index, ...other } = props;
+
+  return (
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ pt: 1 }}>{children}</Box>}
+    </div>
+  );
+}
+
+CustomTabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    "aria-controls": `simple-tabpanel-${index}`,
   };
-  
-  function a11yProps(index) {
-    return {
-      id: `simple-tab-${index}`,
-      "aria-controls": `simple-tabpanel-${index}`,
-    };
-  }
-  
+}
 
 const Footer = () => {
   const hotels = [
@@ -59,9 +74,9 @@ const Footer = () => {
     "Best Hotels in Charleston",
     "Best Hotels in Los Angeles",
     "Hotels in Bangkok",
-    "Hotels in Da Nang"
+    "Hotels in Da Nang",
   ];
-  
+
   const flights = [
     "Flights from Cairo to Jeddah",
     "Flights from Dubai to Riyadh",
@@ -82,9 +97,9 @@ const Footer = () => {
     "Flights from Dallas to Las Vegas",
     "Flights from Boston to Orlando",
     "Flights from Chicago to Phoenix",
-    "Flights from Chicago to Miami"
+    "Flights from Chicago to Miami",
   ];
-  
+
   const attractions = [
     "Attractions in Illinois",
     "Attractions in Chicago",
@@ -94,10 +109,9 @@ const Footer = () => {
     "Attractions in New York",
     "Attractions in Orlando",
     "Attractions in Atlanta",
-    "Things to do in Orlando"
+    "Things to do in Orlando",
   ];
-  
-  
+
   const theme = useTheme();
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
@@ -105,12 +119,12 @@ const Footer = () => {
   };
 
   return (
-    <Box sx={{ width:"90%", margin:"40px auto"}}>
-<Typography variant="h4" component="div" sx={{fontWeight:"700"}}>
-Trip.com Recommendations
-</Typography>
+    <Box sx={{ width: "90%", margin: "40px auto" }}>
+      <Typography variant="h4" component="div" sx={{ fontWeight: "700" }}>
+        Trip.com Recommendations
+      </Typography>
 
-<Box sx={{ width: "100%", mt: 4 }}>
+      <Box sx={{ width: "100%", mt: 4 }}>
         <Box sx={{ borderColor: "divider" }}>
           <Tabs
             value={value}
@@ -127,14 +141,13 @@ Trip.com Recommendations
                 minHeight: "35px",
                 padding: "10px",
                 textTransform: "none",
-                
+
                 "&:hover": {
                   color: theme.palette.primary.dark,
                 },
                 ...(value === 0 && {
                   backgroundColor: "#0F294D",
                   color: "white !important",
-                 
                 }),
               }}
               label="Featured Hotel Destinations"
@@ -149,7 +162,7 @@ Trip.com Recommendations
                 minHeight: "35px",
                 padding: "10px",
                 textTransform: "none",
-        
+
                 "&:hover": {
                   color: theme.palette.primary.dark,
                 },
@@ -170,14 +183,13 @@ Trip.com Recommendations
                 minHeight: "35px",
                 padding: "10px",
                 textTransform: "none",
-          
+
                 "&:hover": {
                   color: theme.palette.primary.dark,
                 },
                 ...(value === 2 && {
                   backgroundColor: "#0F294D",
                   color: "white !important",
-                
                 }),
               }}
               label="Featured Guides"
@@ -185,58 +197,324 @@ Trip.com Recommendations
             />
           </Tabs>
         </Box>
+      </Box>
+      <CustomTabPanel value={value} index={0}>
+        <Paper elevation={3} sx={{ padding: "5px 15px" }}>
+          <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+            <Stack direction="row" sx={{ flexWrap: "wrap" }}>
+              {hotels.map((hotel, index) => (
+                <Stack
+                  key={index}
+                  sx={{ width: "18%", justifyContent: "flex-start" }}
+                >
+                  <ListItem disableGutters sx={{ paddingTop: "0px" }}>
+                    <Link
+                      href="#"
+                      underline="none"
+                      color="#1F1F1F"
+                      sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+                    >
+                      {" "}
+                      <ListItemText primary={hotel} />
+                    </Link>
+                  </ListItem>
+                </Stack>
+              ))}
+            </Stack>
+          </List>
+        </Paper>
+      </CustomTabPanel>
+
+      <CustomTabPanel value={value} index={1}>
+        <Paper elevation={3} sx={{ padding: "5px 15px" }}>
+          <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+            <Stack direction="row" sx={{ flexWrap: "wrap" }}>
+              {flights.map((flight, index) => (
+                <Stack
+                  key={index}
+                  sx={{ width: "20%", justifyContent: "flex-start" }}
+                >
+                  <ListItem disableGutters sx={{ paddingTop: "0px" }}>
+                    <Link
+                      href="#"
+                      underline="none"
+                      color="#1F1F1F"
+                      sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+                    >
+                      {" "}
+                      <ListItemText primary={flight} />
+                    </Link>
+                  </ListItem>
+                </Stack>
+              ))}
+            </Stack>
+          </List>
+        </Paper>
+      </CustomTabPanel>
+
+      <CustomTabPanel value={value} index={2}>
+        <Paper elevation={3} sx={{ padding: "5px 15px" }}>
+          <List sx={{ width: "100%", bgcolor: "background.paper" }}>
+            <Stack direction="row" sx={{ flexWrap: "wrap" }}>
+              {attractions.map((attraction, index) => (
+                <Stack
+                  key={index}
+                  sx={{ width: "20%", justifyContent: "flex-start" }}
+                >
+                  <ListItem disableGutters sx={{ paddingTop: "0px" }}>
+                    <Link
+                      href="#"
+                      underline="none"
+                      color="#1F1F1F"
+                      sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+                    >
+                      {" "}
+                      <ListItemText primary={attraction} />
+                    </Link>
+                  </ListItem>
+                </Stack>
+              ))}
+            </Stack>
+          </List>
+        </Paper>
+      </CustomTabPanel>
+      <Divider
+        style={{ margin: "40px 0px", borderWidth: "0.5px solid" }}
+      ></Divider>
+      <Box sx={{ pb: 4 }}>
+        <Container maxWidth="lg">
+          <Grid container spacing={4}>
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant="h6" gutterBottom sx={{ fontWeight: "700" }}>
+                Contact Us
+              </Typography>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Customer Support
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Service Guarantee
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                More Service Info
+              </Link>
+              <Box sx={{ mt: 2 }}>
+                {/* Social Media Icons (use your icons or MUI icons) */}
+                <Link href="#" sx={{ mr: 1 }}>
+                  <FacebookIcon sx={{ color: "gray" }} />
+                </Link>
+                <Link href="#" sx={{ mr: 1 }}>
+                  <XIcon sx={{ color: "gray" }} />
+                </Link>
+                <Link href="#" sx={{ mr: 1 }}>
+                  <InstagramIcon sx={{ color: "gray" }} />
+                </Link>
+                <Link href="#">
+                  <i className="fab fa-youtube"></i>
+                </Link>
+              </Box>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant="h6" gutterBottom sx={{ fontWeight: "700" }}>
+                About
+              </Typography>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                About Trip.com
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                News
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Careers
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Terms & Conditions
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Privacy Statement
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Do Not Sell My Personal Information
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                About Trip.com Group
+              </Link>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant="h6" gutterBottom sx={{ fontWeight: "700" }}>
+                Other Services
+              </Typography>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Investor Relations
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Trip.com Rewards
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Affiliate Program
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                List Your Property
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                All Hotels
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Become a Supplier
+              </Link>
+              <Link
+                href="#"
+                underline="none"
+                display="block"
+                color="#1F1F1F"
+                sx={{ "&:hover": { color: "blue", cursor: "pointer" } }}
+              >
+                Security
+              </Link>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={3}>
+              <Typography variant="h7" gutterBottom>
+                Payment Methods
+              </Typography>
+              <Box>
+                <img
+                  src="https://t3.ftcdn.net/jpg/04/86/77/04/360_F_486770467_9nd0TjY0owEdwkoUCvi85VfIJQTvQFKi.jpg"
+                  alt="payment methods"
+                  width="350"
+                />
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+        <Divider sx={{ my: 4 }} />
+
+        <Box textAlign="center">
+          <Typography variant="body2" color="textSecondary">
+            <img src="award-icon.png" alt="Award" style={{ marginRight: 8 }} />
+            Contact Center of the year 2022
+          </Typography>
+          <Typography variant="body2" color="textSecondary">
+            <img
+              src="google-icon.png"
+              alt="Google Design"
+              style={{ marginRight: 8 }}
+            />
+            Google Material Design Awards 2019
+          </Typography>
+
+          <Divider sx={{ my: 4 }} />
+
+          <Typography variant="body2" color="textSecondary">
+            Trip.com is part of Trip.com Group Limited, one of the world's
+            leading providers of travel services.
+          </Typography>
+
+          <Typography variant="body2" color="textSecondary" sx={{ mt: 4 }}>
+            Copyright © 2024 Trip.com Travel Singapore Pte. Ltd. All rights
+            reserved
+          </Typography>
         </Box>
-        <CustomTabPanel value={value} index={0}>
-        <Paper  elevation={3} sx={{padding:'5px 15px'}}>
-        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        <Stack direction="row"  sx={{ flexWrap: 'wrap', }}>
-  {hotels.map((hotel, index) => (
-    <Stack key={index} sx={{ width: '18%', justifyContent:"flex-start", }}>
-      <ListItem disableGutters sx={{paddingTop:"0px"}}>
-       <Link href="#" underline="none" color="#1F1F1F" sx={{"&:hover":{color:"blue", cursor:"pointer"}, }}> <ListItemText primary={hotel}  /></Link>
-      </ListItem>
-    </Stack>
-  ))}
-</Stack>
-</List>
-</Paper>
-        </CustomTabPanel>
-
-        <CustomTabPanel value={value} index={1}>
-        <Paper  elevation={3} sx={{padding:'5px 15px'}}>
-        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        <Stack direction="row"  sx={{ flexWrap: 'wrap', }}>
-  {flights.map((flight, index) => (
-    <Stack key={index} sx={{ width: '20%', justifyContent:"flex-start", }}>
-      <ListItem disableGutters sx={{paddingTop:"0px"}}>
-       <Link href="#" underline="none" color="#1F1F1F" sx={{"&:hover":{color:"blue", cursor:"pointer"}, }}> <ListItemText primary={flight}  /></Link>
-      </ListItem>
-    </Stack>
-  ))}
-</Stack>
-</List>
-</Paper>
-        </CustomTabPanel>
-       
-        <CustomTabPanel value={value} index={2}>
-        <Paper  elevation={3} sx={{padding:'5px 15px'}}>
-        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-        <Stack direction="row"  sx={{ flexWrap: 'wrap', }}>
-  {attractions.map((attraction, index) => (
-    <Stack key={index} sx={{ width: '20%', justifyContent:"flex-start", }}>
-      <ListItem disableGutters sx={{paddingTop:"0px"}}>
-       <Link href="#" underline="none" color="#1F1F1F" sx={{"&:hover":{color:"blue", cursor:"pointer"}, }}> <ListItemText primary={attraction}  /></Link>
-      </ListItem>
-    </Stack>
-  ))}
-</Stack>
-</List>
-</Paper>
-        </CustomTabPanel>
-       <Divider  style={{margin:"40px 0px",  borderWidth: '0.5px solid'}}></Divider>
-       <Typography>check</Typography>
+      </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
