@@ -488,12 +488,12 @@ const Footer = () => {
 
         <Box textAlign="center">
           <Typography variant="body2" color="textSecondary">
-            <img src="award-icon.png" alt="Award" style={{ marginRight: 8 }} />
+            <img src="/" alt="Award" style={{ marginRight: 8 }} />
             Contact Center of the year 2022
           </Typography>
           <Typography variant="body2" color="textSecondary">
             <img
-              src="google-icon.png"
+              src="/"
               alt="Google Design"
               style={{ marginRight: 8 }}
             />
