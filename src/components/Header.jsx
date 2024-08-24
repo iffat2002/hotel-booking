@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import Link from "@mui/material/Link";
-import styles from "@/styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import MenuList from "@mui/material/MenuList";
 import MenuItem from "@mui/material/MenuItem";
 import Stack from "@mui/material/Stack";
-import useTheme from "@mui/styles/useTheme";
+//import useTheme from "@mui/styles/useTheme";
 
 const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -22,7 +22,7 @@ const Header = () => {
     { text: "City Tours", url: "/city-tours" },
     { text: "Adventure Tours", url: "/adventure-tours" },
   ];
-  const theme = useTheme();
+ // const theme = useTheme();
 
   const Dropdown = ({ items }) => (
     <Stack
@@ -40,7 +40,7 @@ const Header = () => {
                 sx={{
                   color: "inherit",
                   "&:hover": {
-                    color: theme.palette.primary.main,
+                    color: 'blue',
                   },
                 }}
               >

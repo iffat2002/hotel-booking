@@ -1,12 +1,12 @@
 import React from 'react'
 import Image from "next/image";
 import logo from "../../public/logo.png";
-import { Inter } from "next/font/google";
+//import { Inter } from "next/font/google";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
 import Autocomplete from "@mui/material/Autocomplete";
-import styles from "@/styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
@@ -16,7 +16,7 @@ import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import { TextField, Stack, InputAdornment } from "@mui/material";
 import LanguageIcon from "@mui/icons-material/Language";
-import { makeStyles, useTheme } from "@mui/styles";
+//import { makeStyles, useTheme } from "@mui/styles";
 
 
 export const Navbar = () => {

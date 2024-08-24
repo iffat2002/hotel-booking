@@ -20,7 +20,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import PropTypes from "prop-types";
-import { useTheme } from "@mui/material/styles";
+//import { useTheme } from "@mui/material/styles";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -112,7 +112,7 @@ const Footer = () => {
     "Things to do in Orlando",
   ];
 
-  const theme = useTheme();
+  //const theme = useTheme();
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -143,7 +143,7 @@ const Footer = () => {
                 textTransform: "none",
 
                 "&:hover": {
-                  color: theme.palette.primary.dark,
+                  color: "blue",
                 },
                 ...(value === 0 && {
                   backgroundColor: "#0F294D",
@@ -164,7 +164,7 @@ const Footer = () => {
                 textTransform: "none",
 
                 "&:hover": {
-                  color: theme.palette.primary.dark,
+                  color: "blue",
                 },
                 ...(value === 1 && {
                   backgroundColor: "#0F294D",
@@ -185,7 +185,7 @@ const Footer = () => {
                 textTransform: "none",
 
                 "&:hover": {
-                  color: theme.palette.primary.dark,
+                  color: "blue",
                 },
                 ...(value === 2 && {
                   backgroundColor: "#0F294D",

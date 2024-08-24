@@ -13,7 +13,7 @@ import AddIcon from "@mui/icons-material/Add";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 
 dayjs.extend(localizedFormat);
-import useTheme from "@mui/styles/useTheme";
+//import useTheme from "@mui/styles/useTheme";
 import {
   Card,
   CardContent,
@@ -87,7 +87,7 @@ const Hotels = () => {
     }
     return 0;
   };
-  const theme = useTheme();
+  //const theme = useTheme();
   //room booking
   const [room, setRoom] = useState(1);
   const handleRooms = (e) => {
@@ -437,18 +437,18 @@ const Hotels = () => {
                         backgroundColor: "transparent", // Default background color or gray if disabled
                         color:
                           option.value === 1
-                            ? theme.palette.grey[400]
-                            : theme.palette.primary.main,
+                            ? "grey[400]"
+                            : 'blue',
 
                         "&:hover": {
                           color:
                             option.value === 1
-                              ? theme.palette.grey[400]
+                              ? 'grey[400]'
                               : "white",
                           backgroundColor:
                             option.value === 1
                               ? "transparent"
-                              : theme.palette.primary.main,
+                              : "blue",
                           border: option.value === 1 ? "2px solid" : "none",
                         },
                         // Adjust padding to ensure the icon fits well inside the circle
@@ -466,7 +466,7 @@ const Hotels = () => {
                         border: "2px solid",
                         backgroundColor: "transparent", // Default background color
                         "&:hover": {
-                          backgroundColor: theme.palette.primary.main,
+                          backgroundColor: "blue",
                           fill: "white",
                           border: "none",
                         },

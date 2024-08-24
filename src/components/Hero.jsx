@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography, AppBar, Tabs, Tab } from "@mui/material";
 import SwipeableViews from "react-swipeable-views";
 import Hotels from "./subComponent/Hotels";
-import styles from "@/styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 import PropTypes from "prop-types";
 import { useTheme } from "@mui/material/styles";
 import WhiteTooltip from "./subComponent/whiteTooltip";
@@ -62,20 +62,20 @@ const Hero = () => {
           Your Trip Starts Here
         </Typography>
         <Box display="flex" justifyContent="center" alignItems="center" mt={2}>
-        <WhiteTooltip title="This is secure payment information">
-          <Typography
-            variant="h7"
-            sx={{
-              mx: 2,
-              cursor: "pointer",
-              color: "white",
-              textDecoration: "underline",
-              textDecorationStyle: "dotted",
-              lineHeight: "1px",
-            }}
-          >
-            Secure Payment
-          </Typography>
+          <WhiteTooltip title="This is secure payment information">
+            <Typography
+              variant="h7"
+              sx={{
+                mx: 2,
+                cursor: "pointer",
+                color: "white",
+                textDecoration: "underline",
+                textDecorationStyle: "dotted",
+                lineHeight: "1px",
+              }}
+            >
+              Secure Payment
+            </Typography>
           </WhiteTooltip>
           <Box
             component="span"
@@ -87,19 +87,19 @@ const Hero = () => {
             }}
           />
           <WhiteTooltip title="We usually answer phone calls within 30s">
-          <Typography
-            variant="h7"
-            sx={{
-              mx: 2,
-              cursor: "pointer",
-              color: "white",
-              textDecoration: "underline",
-              textDecorationStyle: "dotted",
-              lineHeight: "1px",
-            }}
-          >
-            Support in approx 30s
-          </Typography>
+            <Typography
+              variant="h7"
+              sx={{
+                mx: 2,
+                cursor: "pointer",
+                color: "white",
+                textDecoration: "underline",
+                textDecorationStyle: "dotted",
+                lineHeight: "1px",
+              }}
+            >
+              Support in approx 30s
+            </Typography>
           </WhiteTooltip>
         </Box>
         <Box sx={{ width: "100%", margin: "auto", marginTop: "12px" }}>
@@ -111,51 +111,45 @@ const Hero = () => {
               backdropFilter: "blur(6px)",
               width: "70%",
               margin: "auto",
-             
             }}
           >
             <Tabs
               value={value}
               onChange={handleChange}
               textColor="inherit"
-            
               aria-label="full width tabs example"
               sx={{
                 padding: "5px",
 
-                justifyContent:"space-between",
-                 maxHeight:"38px",
+                justifyContent: "space-between",
+                maxHeight: "38px",
 
                 "& .css-1aquho2-MuiTabs-indicator": {
                   display: "none",
                 },
                 "& .css-1vw5i9y-MuiButtonBase-root-MuiTab-root": {
                   padding: "0px",
-                },  
-                "& .MuiTabs-flexContainer":{
-                  height:"30px",
-                  justifyContent:"space-between",
-                }
+                },
+                "& .MuiTabs-flexContainer": {
+                  height: "30px",
+                  justifyContent: "space-between",
+                },
               }}
             >
               <Tab
-               
                 label="Hotels"
                 {...a11yProps(0)}
                 sx={{
                   fontWeight: "700",
-                  minHeight: '38px',
+                  minHeight: "38px",
                   textTransform: "none",
                   fontSize: "large",
                   ...(value === 0 && {
                     backgroundColor: "background.paper",
                     color: "#0f294d",
                     borderRadius: "30px",
-                   
+
                     padding: "0px",
-                  
-                   
-                   
                   }),
                 }}
               />
@@ -164,14 +158,13 @@ const Hero = () => {
                 {...a11yProps(1)}
                 sx={{
                   fontWeight: "700",
-                  minHeight: '38px',
+                  minHeight: "38px",
                   textTransform: "none",
                   fontSize: "large",
                   ...(value === 1 && {
                     backgroundColor: "background.paper",
                     color: "#0f294d",
                     borderRadius: "30px",
-                   
                   }),
                 }}
               />
@@ -180,14 +173,13 @@ const Hero = () => {
                 {...a11yProps(2)}
                 sx={{
                   fontWeight: "700",
-                  minHeight: '38px',
+                  minHeight: "38px",
                   textTransform: "none",
                   fontSize: "large",
                   ...(value === 2 && {
                     backgroundColor: "background.paper",
                     color: "#0f294d",
                     borderRadius: "30px",
-                  
                   }),
                 }}
               />
@@ -196,14 +188,13 @@ const Hero = () => {
                 {...a11yProps(3)}
                 sx={{
                   fontWeight: "700",
-                  minHeight: '38px',
+                  minHeight: "38px",
                   textTransform: "none",
                   fontSize: "large",
                   ...(value === 3 && {
                     backgroundColor: "background.paper",
                     color: "#0f294d",
                     borderRadius: "30px",
-                  
                   }),
                 }}
               />
@@ -212,14 +203,13 @@ const Hero = () => {
                 {...a11yProps(4)}
                 sx={{
                   fontWeight: "700",
-                  minHeight: '38px',
+                  minHeight: "38px",
                   textTransform: "none",
                   fontSize: "large",
                   ...(value === 4 && {
                     backgroundColor: "background.paper",
                     color: "#0f294d",
                     borderRadius: "30px",
-           
                   }),
                 }}
               />
@@ -228,14 +218,13 @@ const Hero = () => {
                 {...a11yProps(5)}
                 sx={{
                   fontWeight: "700",
-                  minHeight: '38px',
+                  minHeight: "38px",
                   textTransform: "none",
                   fontSize: "large",
                   ...(value === 5 && {
                     backgroundColor: "background.paper",
                     color: "#0f294d",
                     borderRadius: "30px",
-                 
                   }),
                 }}
               />

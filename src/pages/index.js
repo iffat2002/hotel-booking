@@ -1,30 +1,30 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Navbar } from "@/components/Navbar";
+
+import { Navbar } from "../components/Navbar";
 import { useEffect, useState } from "react";
-import { Inter } from "next/font/google";
+//import { Inter } from "next/font/google";
 import Link from "@mui/material/Link";
 import Box from "@mui/material/Box";
-import styles from "@/styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import MenuList from "@mui/material/MenuList";
 import MenuItem from "@mui/material/MenuItem";
 import Stack from "@mui/material/Stack";
-import useTheme from "@mui/styles/useTheme";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import ThreeImages from "@/components/ThreeImages";
-import WelcomePack from "@/components/WelcomePack";
-import Featured from "@/components/Featured";
-import QRcode from "@/components/QRcode";
-import Footer from "@/components/Footer";
+//import useTheme from "@mui/styles/useTheme";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import ThreeImages from "../components/ThreeImages";
+import WelcomePack from "../components/WelcomePack";
+import Featured from "../components/Featured";
+import QRcode from "../components/QRcode";
+import Footer from "../components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+//const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const theme = useTheme();
+  // const theme = useTheme();
   return (
     <>
       <Head>
@@ -41,13 +41,12 @@ export default function Home() {
             <Hero />
             <ThreeImages />
           </div>
-      <div>
-      <WelcomePack />
-      <Featured />
-      <QRcode />
-      <Footer />
-      </div>
-          
+          <div>
+            <WelcomePack />
+            <Featured />
+            <QRcode />
+            <Footer />
+          </div>
         </div>
       </main>
     </>

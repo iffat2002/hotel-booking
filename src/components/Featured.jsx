@@ -15,7 +15,7 @@ import {
   Rating,
 } from "@mui/material";
 import PropTypes from "prop-types";
-import styles from "@/styles/Home.module.css";
+import styles from "../styles/Home.module.css";
 import { useTheme } from "@mui/material/styles";
 import WhiteTooltip from "./subComponent/whiteTooltip";
 
